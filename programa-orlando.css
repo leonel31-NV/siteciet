@@ -1,0 +1,1881 @@
+/*==================================================*
+    CIET-BRASIL
+    PROGRAMA — INGLÊS EM ORLANDO
+*==================================================*/
+
+
+/*==================================================*
+    RESET
+*==================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#031522;
+
+    color:#132d46;
+
+    overflow-x:hidden;
+
+}
+
+
+a{
+
+    text-decoration:none;
+
+}
+
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+
+.container,
+.contentContainer{
+
+    width:min(90%,1300px);
+
+    margin:auto;
+
+}
+
+
+/*==================================================*
+    VARIÁVEIS
+*==================================================*/
+
+:root{
+
+    --azul:#031522;
+
+    --azul2:#061a2c;
+
+    --azul3:#082b48;
+
+    --azul4:#0b4168;
+
+    --azulGlow:#2EA8FF;
+
+    --azulTexto:#12304b;
+
+    --branco:#fff;
+
+    --cinza:#5e7285;
+
+    --cinzaClaro:#edf2f5;
+
+}
+
+
+/*==================================================*
+    HERO
+*==================================================*/
+
+.programHero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    color:#fff;
+
+}
+
+
+.heroBackground{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        url("img/fotodeorlando.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    transform:scale(1.02);
+
+}
+
+
+.heroOverlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(2,17,31,.96) 0%,
+            rgba(2,17,31,.80) 35%,
+            rgba(2,17,31,.35) 68%,
+            rgba(2,17,31,.28) 100%
+        );
+
+}
+
+
+.heroOverlay::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(2,17,31,.45),
+            transparent 40%,
+            rgba(2,17,31,.85)
+        );
+
+}
+
+
+.heroContainer{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(86%,1300px);
+
+    height:100%;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/*==================================================*
+    TOPO HERO
+*==================================================*/
+
+.heroTop{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding-top:25px;
+
+}
+
+
+.logo img{
+
+    width:90px;
+
+}
+
+
+.backButton{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:14px 25px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:40px;
+
+    color:#fff;
+
+    font-size:15px;
+
+    backdrop-filter:blur(8px);
+
+    background:rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+
+.backButton span{
+
+    font-size:25px;
+
+    line-height:0;
+
+}
+
+
+.backButton:hover{
+
+    background:#fff;
+
+    color:#06233b;
+
+}
+
+
+/*==================================================*
+    HERO PRINCIPAL
+*==================================================*/
+
+.heroMain{
+
+    margin-top:auto;
+
+    margin-bottom:45px;
+
+    max-width:900px;
+
+}
+
+
+.eyebrow{
+
+    display:block;
+
+    margin-bottom:24px;
+
+    color:#57baff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+}
+
+
+.heroMain h1{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:clamp(62px,7vw,104px);
+
+    font-weight:500;
+
+    line-height:.91;
+
+    letter-spacing:-4px;
+
+    margin-bottom:30px;
+
+}
+
+
+.heroMain h1 strong{
+
+    display:block;
+
+    color:#52b7ff;
+
+    font-weight:700;
+
+}
+
+
+.heroSubtitle{
+
+    max-width:650px;
+
+    font-size:22px;
+
+    line-height:1.5;
+
+    color:#f4f8fb;
+
+}
+
+
+.heroPhrase{
+
+    margin-top:28px;
+
+    padding-left:17px;
+
+    border-left:2px solid #2EA8FF;
+
+    font-size:18px;
+
+    font-style:italic;
+
+    line-height:1.5;
+
+}
+
+
+.heroPhrase span{
+
+    color:#58baff;
+
+}
+
+
+/*==================================================*
+    INFORMAÇÕES DO HERO
+*==================================================*/
+
+.heroInfo{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1.4fr
+        1.4fr;
+
+    margin-top:48px;
+
+    border-top:1px solid rgba(255,255,255,.22);
+
+}
+
+
+.infoItem{
+
+    padding:16px 22px 0 0;
+
+}
+
+
+.infoItem:not(:first-child){
+
+    padding-left:22px;
+
+    border-left:1px solid rgba(255,255,255,.15);
+
+}
+
+
+.infoItem span{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#62bcf6;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+
+.infoItem strong{
+
+    display:block;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    line-height:1.4;
+
+}
+
+
+/*==================================================*
+    SEÇÕES GERAIS
+*==================================================*/
+
+.section{
+
+    padding:125px 0;
+
+}
+
+
+.sectionLight{
+
+    background:#f1f4f6;
+
+}
+
+
+.sectionLabel{
+
+    display:block;
+
+    margin-bottom:20px;
+
+    color:#249eea;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+}
+
+
+.section h2{
+
+    max-width:800px;
+
+    margin-bottom:32px;
+
+    font-family:'Poppins',sans-serif;
+
+    color:#102d47;
+
+    font-size:clamp(38px,4.5vw,62px);
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+}
+
+
+.section p{
+
+    max-width:780px;
+
+    margin-bottom:20px;
+
+    color:#536b7f;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+.section strong{
+
+    color:#163d5c;
+
+}
+
+
+/*==================================================*
+    INTRO
+*==================================================*/
+
+.intro{
+
+    padding:145px 0;
+
+    background:#f1f4f6;
+
+}
+
+
+.intro h2{
+
+    max-width:950px;
+
+    margin-bottom:35px;
+
+    font-family:'Poppins',sans-serif;
+
+    color:#112e48;
+
+    font-size:clamp(42px,5vw,72px);
+
+    line-height:1;
+
+    letter-spacing:-3px;
+
+}
+
+
+.intro p{
+
+    max-width:950px;
+
+    margin-bottom:24px;
+
+    color:#536b7f;
+
+    font-size:19px;
+
+    line-height:1.85;
+
+}
+
+
+.introText{
+
+    font-size:22px !important;
+
+    color:#3f5b73 !important;
+
+}
+
+
+/*==================================================*
+    DUAS COLUNAS
+*==================================================*/
+
+.twoColumns{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:100px;
+
+    align-items:center;
+
+}
+
+
+/*==================================================*
+    QUOTE
+*==================================================*/
+
+.quoteBox{
+
+    min-height:340px;
+
+    padding:55px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    background:#082b48;
+
+    color:#fff;
+
+}
+
+
+.quoteBox span{
+
+    margin-bottom:30px;
+
+    color:#54b9ff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+}
+
+
+.quoteBox p{
+
+    color:#fff;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:32px;
+
+    line-height:1.25;
+
+}
+
+
+/*==================================================*
+    IMERSÃO
+*==================================================*/
+
+.immersion{
+
+    background:#061a2c;
+
+}
+
+
+.immersion h2{
+
+    color:#fff;
+
+}
+
+
+.experienceGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:1px;
+
+    margin-top:70px;
+
+    background:rgba(255,255,255,.15);
+
+}
+
+
+.experienceCard{
+
+    min-height:320px;
+
+    padding:35px;
+
+    background:#061a2c;
+
+    transition:.4s;
+
+}
+
+
+.experienceCard:hover{
+
+    background:#092b47;
+
+    transform:translateY(-6px);
+
+}
+
+
+.experienceCard > span{
+
+    display:block;
+
+    margin-bottom:55px;
+
+    color:#4bb4f8;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+}
+
+
+.experienceCard h3{
+
+    margin-bottom:18px;
+
+    color:#fff;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:22px;
+
+    line-height:1.25;
+
+}
+
+
+.experienceCard p{
+
+    color:#aebdca;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+/*==================================================*
+    ORLANDO
+*==================================================*/
+
+.citySection{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    min-height:650px;
+
+    background:#eef2f4;
+
+}
+
+
+.cityImage{
+
+    overflow:hidden;
+
+}
+
+
+.cityImage img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:1s;
+
+}
+
+
+.cityImage:hover img{
+
+    transform:scale(1.04);
+
+}
+
+
+.cityContent{
+
+    padding:100px 10%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+.cityContent h2{
+
+    max-width:650px;
+
+    margin-bottom:30px;
+
+    color:#102d47;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:clamp(38px,4vw,58px);
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+}
+
+
+.cityContent p{
+
+    max-width:650px;
+
+    margin-bottom:22px;
+
+    color:#536b7f;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+.cityContent .smallText{
+
+    color:#7a8d9d;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/*==================================================*
+    JORNADA
+*==================================================*/
+
+.journey{
+
+    background:#fff;
+
+}
+
+
+.sectionHeader{
+
+    max-width:850px;
+
+}
+
+
+.sectionHeader > p{
+
+    max-width:750px;
+
+}
+
+
+.journeySteps{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    margin-top:70px;
+
+    border-top:1px solid #ccd6dd;
+
+    border-bottom:1px solid #ccd6dd;
+
+}
+
+
+.journeySteps div{
+
+    min-height:150px;
+
+    padding:30px;
+
+    border-right:1px solid #ccd6dd;
+
+}
+
+
+.journeySteps div:first-child{
+
+    border-left:1px solid #ccd6dd;
+
+}
+
+
+.journeySteps span{
+
+    display:block;
+
+    margin-bottom:25px;
+
+    color:#2EA8FF;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+
+}
+
+
+.journeySteps strong{
+
+    color:#173a57;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:20px;
+
+}
+
+
+/*==================================================*
+    O QUE O PROGRAMA PREVÊ
+*==================================================*/
+
+.programIncludes{
+
+    background:#edf2f5;
+
+}
+
+
+.includeList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+.includeList div{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+
+.includeList span{
+
+    flex-shrink:0;
+
+    width:26px;
+
+    height:26px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#2EA8FF;
+
+    color:#fff;
+
+    font-size:13px;
+
+}
+
+
+.includeList p{
+
+    margin:0;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+
+.note{
+
+    margin-top:65px;
+
+    padding-top:25px;
+
+    border-top:1px solid #cbd5dc;
+
+}
+
+
+.note p{
+
+    color:#788a99;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+/*==================================================*
+    PARA QUEM
+*==================================================*/
+
+.audience{
+
+    background:#fff;
+
+}
+
+
+.largeParagraph{
+
+    max-width:1000px !important;
+
+    color:#173b59 !important;
+
+    font-size:25px !important;
+
+    line-height:1.55 !important;
+
+}
+
+
+/*==================================================*
+    POR QUE ORLANDO
+*==================================================*/
+
+.whyOrlando{
+
+    padding:145px 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #061a2c,
+            #082e4c
+        );
+
+    color:#fff;
+
+}
+
+
+.whyOrlando h2{
+
+    max-width:950px;
+
+    margin-bottom:60px;
+
+    color:#fff;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:clamp(40px,5vw,70px);
+
+    line-height:1.03;
+
+    letter-spacing:-3px;
+
+}
+
+
+.whyText{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:50px;
+
+}
+
+
+.whyText p{
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.25);
+
+    color:#d1dde5;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+/*==================================================*
+    PERSONALIZADA
+*==================================================*/
+
+.personalized{
+
+    background:#f1f4f6;
+
+}
+
+
+/*==================================================*
+    FICHA TÉCNICA
+*==================================================*/
+
+.programData{
+
+    padding:90px 0;
+
+    background:#08233c;
+
+}
+
+
+.dataGrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+    border-left:1px solid rgba(255,255,255,.1);
+
+}
+
+
+.dataItem{
+
+    min-height:140px;
+
+    padding:25px;
+
+    border-right:1px solid rgba(255,255,255,.1);
+
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+}
+
+
+.dataItem span{
+
+    display:block;
+
+    margin-bottom:15px;
+
+    color:#55baff;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+}
+
+
+.dataItem strong{
+
+    display:block;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    line-height:1.5;
+
+}
+
+
+/*==================================================*
+    CTA
+*==================================================*/
+
+.cta{
+
+    padding:150px 0;
+
+    text-align:center;
+
+    background:#f1f4f6;
+
+}
+
+
+.cta .contentContainer{
+
+    max-width:950px;
+
+}
+
+
+.cta h2{
+
+    margin-bottom:30px;
+
+    color:#102d47;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:clamp(42px,5vw,70px);
+
+    line-height:1.02;
+
+    letter-spacing:-3px;
+
+}
+
+
+.cta p{
+
+    max-width:700px;
+
+    margin:0 auto 45px;
+
+    color:#617587;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+.ctaButtons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+
+.btnPrimary,
+.btnSecondary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px 28px;
+
+    border-radius:40px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.btnPrimary{
+
+    background:#2EA8FF;
+
+    color:#fff;
+
+}
+
+
+.btnPrimary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(46,168,255,.3);
+
+}
+
+
+.btnSecondary{
+
+    border:1px solid #9eabb5;
+
+    color:#163a57;
+
+}
+
+
+.btnSecondary:hover{
+
+    background:#163a57;
+
+    color:#fff;
+
+}
+
+
+/*==================================================*
+    FOOTER
+*==================================================*/
+
+.footer{
+
+    background:#031522;
+
+    color:#fff;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.footerContent{
+
+    min-height:360px;
+
+    padding:80px 0;
+
+    display:grid;
+
+    grid-template-columns:1.4fr 1fr 1fr;
+
+    gap:80px;
+
+    align-items:start;
+
+}
+
+
+.footerBrand h2{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:58px;
+
+    font-weight:800;
+
+    letter-spacing:5px;
+
+    line-height:1;
+
+    margin-bottom:18px;
+
+}
+
+
+.footerBrand span{
+
+    display:block;
+
+    max-width:360px;
+
+    color:#aebdca;
+
+    font-size:14px;
+
+    line-height:24px;
+
+}
+
+
+.footerBrand p{
+
+    margin-top:30px;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:500;
+
+}
+
+
+.footerColumn h3{
+
+    margin-bottom:28px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+
+.footerColumn h3::after{
+
+    content:"";
+
+    display:block;
+
+    width:30px;
+
+    height:2px;
+
+    background:#fff;
+
+    margin-top:10px;
+
+    opacity:.5;
+
+}
+
+
+.contactItem{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    margin-bottom:22px;
+
+}
+
+
+.contactIcon{
+
+    width:34px;
+
+    height:34px;
+
+    min-width:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:50%;
+
+}
+
+
+.contactItem small{
+
+    display:block;
+
+    margin-bottom:4px;
+
+    color:#788d9d;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+.contactItem a,
+.contactItem p{
+
+    color:#dce6ed;
+
+    font-size:14px;
+
+    line-height:22px;
+
+}
+
+
+.contactItem a:hover{
+
+    color:#fff;
+
+}
+
+
+.socialColumn > p{
+
+    max-width:280px;
+
+    margin-bottom:25px;
+
+    color:#9eafbc;
+
+    font-size:14px;
+
+    line-height:24px;
+
+}
+
+
+.socialLinks{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+.socialLinks a{
+
+    width:max-content;
+
+    color:#c8d4dc;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+
+.socialLinks a:hover{
+
+    color:#fff;
+
+    transform:translateX(5px);
+
+}
+
+
+/*==================================================*
+    FOOTER BOTTOM
+*==================================================*/
+
+.footerBottom{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.footerBottom .container{
+
+    min-height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.footerBottom p,
+.footerBottom span{
+
+    color:#718593;
+
+    font-size:12px;
+
+}
+
+
+/*==================================================*
+    RESPONSIVO
+*==================================================*/
+
+@media(max-width:1000px){
+
+    .heroMain h1{
+
+        font-size:70px;
+
+    }
+
+
+    .heroInfo{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .experienceGrid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .twoColumns{
+
+        gap:50px;
+
+    }
+
+
+    .dataGrid{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+
+    .footerContent{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:50px;
+
+    }
+
+
+    .footerBrand{
+
+        grid-column:1 / -1;
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .programHero{
+
+        min-height:100svh;
+
+        height:auto;
+
+    }
+
+
+    .heroContainer{
+
+        min-height:100svh;
+
+        height:auto;
+
+    }
+
+
+    .heroTop{
+
+        padding-top:20px;
+
+    }
+
+
+    .logo img{
+
+        width:75px;
+
+    }
+
+
+    .backButton{
+
+        padding:11px 16px;
+
+        font-size:13px;
+
+    }
+
+
+    .heroMain{
+
+        margin-top:100px;
+
+        margin-bottom:35px;
+
+    }
+
+
+    .eyebrow{
+
+        font-size:9px;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .heroMain h1{
+
+        font-size:52px;
+
+        letter-spacing:-2px;
+
+    }
+
+
+    .heroSubtitle{
+
+        font-size:18px;
+
+    }
+
+
+    .heroPhrase{
+
+        font-size:15px;
+
+    }
+
+
+    .heroInfo{
+
+        grid-template-columns:1fr;
+
+        margin-top:35px;
+
+    }
+
+
+    .infoItem{
+
+        padding:14px 0;
+
+        border-bottom:1px solid rgba(255,255,255,.15);
+
+    }
+
+
+    .infoItem:not(:first-child){
+
+        padding-left:0;
+
+        border-left:none;
+
+    }
+
+
+    .section,
+    .intro,
+    .whyOrlando,
+    .cta{
+
+        padding:90px 0;
+
+    }
+
+
+    .twoColumns{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+
+    .quoteBox{
+
+        min-height:280px;
+
+        padding:35px;
+
+    }
+
+
+    .experienceGrid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .experienceCard{
+
+        min-height:auto;
+
+    }
+
+
+    .citySection{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .cityImage{
+
+        height:400px;
+
+    }
+
+
+    .cityContent{
+
+        padding:70px 8%;
+
+    }
+
+
+    .journeySteps{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .journeySteps div{
+
+        border-left:1px solid #ccd6dd;
+
+        border-bottom:1px solid #ccd6dd;
+
+    }
+
+
+    .journeySteps div:first-child{
+
+        border-left:1px solid #ccd6dd;
+
+    }
+
+
+    .whyText{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+
+    .dataGrid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .ctaButtons{
+
+        flex-direction:column;
+
+    }
+
+
+    .btnPrimary,
+    .btnSecondary{
+
+        width:100%;
+
+    }
+
+
+    .footerContent{
+
+        grid-template-columns:1fr;
+
+        padding:60px 0;
+
+        gap:45px;
+
+    }
+
+
+    .footerBrand{
+
+        grid-column:auto;
+
+    }
+
+
+    .footerBrand h2{
+
+        font-size:48px;
+
+    }
+
+
+    .footerBottom .container{
+
+        min-height:100px;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        gap:8px;
+
+        text-align:center;
+
+    }
+
+}
